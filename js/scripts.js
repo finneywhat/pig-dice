@@ -10,6 +10,8 @@ function Player(inputName, score) {
 
 Player.prototype.nextTurn = function () {
   alert("NEXT TURN");
+
+  turnScore = 0;
 };
 
 var Player1 = new Player(prompt("Player 1, enter your name."), 0);
@@ -24,12 +26,12 @@ $(document).ready(function() {
     $("#player-one-roll-result").text(rollResult);
 
     if (rollResult === 1) {
+      turnScore = 0;
       Player1.nextTurn();
     } else {
       turnScore += rollResult;
-      $("#player-one-turn-total").text(turnScore);
     }
-
+    $("#player-one-turn-total").text(turnScore);
   });
 
   $("#player-one-hold-butt").click(function() {
