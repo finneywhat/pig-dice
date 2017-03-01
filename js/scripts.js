@@ -7,7 +7,7 @@ function Player(inputName, score) {
   this.userName = inputName;
   this.score = score;
 }
-
+ 
 var Player1 = new Player(prompt("Player 1, enter your name."), 0);
 var Player2 = new Player(prompt("Player 2, enter your name."), 0);
 
