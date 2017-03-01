@@ -1,0 +1,12 @@
+body {
+  text-align: center;
+}
+button {
+  width: 40%;
+  margin: 10px;
+  box-shadow: 0 3px 8px black;
+}
+
+.col-md-6 {
+  border: 1px solid black;
+}
