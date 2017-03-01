@@ -1,4 +1,6 @@
 var turnScore = 0;
+var playerOneTotal = 0;
+
 
 $(document).ready(function() {
   $("#player-one-roll-butt").click(function() {
@@ -9,7 +11,15 @@ $(document).ready(function() {
       alert("Rolled a 1!");
     } else {
       turnScore += rollResult;
+      $("#player-one-turn-total").text(turnScore);
     }
-    console.log(turnScore);
+
   });
+
+  $("#player-one-hold-butt").click(function() {
+    playerOneTotal += turnScore;
+    // $("#player-one-total").text()
+    console.log(playerOneTotal);
+  });
+
 });
