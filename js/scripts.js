@@ -7,7 +7,11 @@ function Player(inputName, score) {
   this.userName = inputName;
   this.score = score;
 }
- 
+
+Player.prototype.nextTurn = function () {
+  alert("NEXT TURN");
+};
+
 var Player1 = new Player(prompt("Player 1, enter your name."), 0);
 var Player2 = new Player(prompt("Player 2, enter your name."), 0);
 
@@ -20,7 +24,7 @@ $(document).ready(function() {
     $("#player-one-roll-result").text(rollResult);
 
     if (rollResult === 1) {
-      alert("Rolled a 1!");
+      Player1.nextTurn();
     } else {
       turnScore += rollResult;
       $("#player-one-turn-total").text(turnScore);
@@ -31,7 +35,7 @@ $(document).ready(function() {
   $("#player-one-hold-butt").click(function() {
     playerOneTotal += turnScore;
     // $("#player-one-total").text(playerOneTotal);
-    console.log(playerOneTotal);
+    Player1.nextTurn();
   });
 
 });
