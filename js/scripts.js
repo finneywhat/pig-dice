@@ -34,6 +34,8 @@ var nextTurn = function() {
   } else {
     turnIndex = 0;
   }
+  $("#player-two-pane").toggleClass("active-user");
+  $("#player-one-pane").toggleClass("active-user");
 };
 
 var Player1 = new Player(prompt("Player 1, enter your name."), 0);
@@ -57,9 +59,14 @@ $(document).ready(function() {
 
     Players[turnIndex].hold();
     $("#player-total" + turnIndex).text(Players[turnIndex].score);
-    $("#player-turn-total" + turnIndex).text("0");
-    $("#player-roll-result" + turnIndex).text("0");
+    if (Players[turnIndex].score >= 100) {
+      alert("Game Over! " + Players[turnIndex].userName + " wins!");
+      location.reload();
+    } else {
+      $("#player-turn-total" + turnIndex).text("0");
+      $("#player-roll-result" + turnIndex).text("0");
 
-    nextTurn();
+      nextTurn();
+    }
   });
 });
